@@ -1,0 +1,24 @@
+RegionServer1:
+  MasterSocketServer:
+    IP: 127.0.0.1
+    Port: 14000
+  ClientSocketServer:
+    IP: 127.0.0.1
+    Port: 15000
+RegionServer2:
+  MasterSocketServer:
+    IP: 127.0.0.1
+    Port: 14001
+  ClientSocketServer:
+    IP: 127.0.0.1
+    Port: 15001
+RegionServer3:
+  MasterSocketServer:
+    IP: 127.0.0.1
+    Port: 14002
+  ClientSocketServer:
+    IP: 127.0.0.1
+    Port: 15002
+zookeeper:
+  IP: 127.0.0.1
+  Port: 2181
