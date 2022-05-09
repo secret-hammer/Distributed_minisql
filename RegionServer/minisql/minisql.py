@@ -28,9 +28,9 @@ class SQL(object):
         record.__finalize__()
 
     def __call__(self, command):
-        self.excute(command)
+        self.execute(command)
 
-    def excute(self, command):
+    def execute(self, command):
         command = command.replace(';', '').strip()
         command_ind = command.find(' ')
         command_name = command[:command_ind].strip()
@@ -38,11 +38,15 @@ class SQL(object):
         # 执行具体的命令
         try:
             executor = getattr(api, command_name)
-            executor(command)
+            if command_name == 'select':
+                return executor(command)
+            else:
+                executor(command)
+                return 0
         except Exception as e:
-            print(e)
+            return e
 
 
 if __name__ == '__main__':
     sql = SQL()
-    sql.excute("select * from student;")
+    sql.execute("select * from student;")

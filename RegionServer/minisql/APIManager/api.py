@@ -28,7 +28,8 @@ def select(args):
                 raise error.Semantic_error()
             conditions = __access_condition_list(table_name, arglist[pos_from + 3:])
 
-        record.select_from_table(table_name, cols, conditions)
+        rt = record.select_from_table(table_name, cols, conditions)
+        return [table_name, cols, rt]
     except Exception as e:
         raise e
 
@@ -119,38 +120,44 @@ def delete(args):
         count = record.delete_from_table(table_name, conditions)
         print("Successfully delete %d entry(s) from table '%s'," % (count, table_name))
     except Exception as e:
-        print(e)
+        raise e
 
 
 def drop(args):
-    args = re.sub(' +', ' ', args).strip().replace(';', '')
-    arglist = args.split(' ')
-    if arglist[0] == 'table':
-        table_name = arglist[1]
-        catalog.check_table_exist(table_name)
-        record.drop_table(table_name)
-        catalog.drop_table(table_name)
-        index.drop_table(table_name)
-        print("Successfully drop table '%s'." % table_name)
-    elif arglist[0] == 'index':
-        if arglist[2] != 'on':
+    try:
+        args = re.sub(' +', ' ', args).strip().replace(';', '')
+        arglist = args.split(' ')
+        if arglist[0] == 'table':
+            table_name = arglist[1]
+            catalog.check_table_exist(table_name)
+            record.drop_table(table_name)
+            catalog.drop_table(table_name)
+            index.drop_table(table_name)
+            print("Successfully drop table '%s'." % table_name)
+        elif arglist[0] == 'index':
+            if arglist[2] != 'on':
+                raise error.Command_error('drop ' + args)
+            index_name = arglist[1]
+            table_name = arglist[3]
+            catalog.check_table_exist(table_name)
+            index.check_index_exist(table_name, index_name)
+            index.drop_index(table_name, index_name)
+            print("Successfully drop index '%s' on table '%s'." % (index_name, table_name))
+        else:
             raise error.Command_error('drop ' + args)
-        index_name = arglist[1]
-        table_name = arglist[3]
-        catalog.check_table_exist(table_name)
-        index.check_index_exist(table_name, index_name)
-        index.drop_index(table_name, index_name)
-        print("Successfully drop index '%s' on table '%s'." % (index_name, table_name))
-    else:
-        raise error.Command_error('drop ' + args)
+    except Exception as e:
+        raise e
 
 
 def truncate(args):
-    table_name = args.strip()
-    catalog.check_table_exist(table_name)
-    record.truncate_table(table_name)
-    index.truncate_table(table_name)
-    print("Successfully truncate table '%s'." % table_name)
+    try:
+        table_name = args.strip()
+        catalog.check_table_exist(table_name)
+        record.truncate_table(table_name)
+        index.truncate_table(table_name)
+        print("Successfully truncate table '%s'." % table_name)
+    except Exception as e:
+        raise e
 
 # 处理条件表达式到指定格式（检查条件正确性）
 def __access_condition_list(table_name, conditions):

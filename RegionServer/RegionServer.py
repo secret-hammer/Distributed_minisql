@@ -2,6 +2,7 @@ import os
 import kazoo
 import socketserver
 import yaml
+import threading
 from argparse import ArgumentParser
 
 from minisql.minisql import SQL
@@ -25,7 +26,8 @@ class RegionServer(object):
         self.master_server = MasterServer(
             server_address=(master_server_cfg['IP'], master_server_cfg['Port']),
             request_handler=MasterSocketHandler,
-            sql=self.SQL
+            sql=self.SQL,
+            logger=self.logger
         )
         self.master_server.serve_forever()
 
@@ -41,9 +43,15 @@ class RegionServer(object):
         self.client_server = ClientServer(
             server_address=(client_server_cfg['IP'], client_server_cfg['Port']),
             request_handler=ClientSocketHandler,
-            sql=self.SQL
+            sql=self.SQL,
+            logger=self.logger
         )
-        self.master_server.serve_forever()
+        self.client_server.serve_forever()
+
+        # 启动日志回收
+        interval_time = 300 # seconds
+        timer = threading.Timer(interval_time, function=self.logger.auto_commit)
+        timer.start()
 
 
 def main():

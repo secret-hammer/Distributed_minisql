@@ -79,7 +79,7 @@ def print_select_records(table_name, __column_names, __records):
     print(tb)
 
 
-def select_from_table(table_name, __column_names, __conditions):
+def select_from_table(table_name, __column_names, __conditions, return_value=True):
     values = []
     select_column_index = []
     all_column_names = []
@@ -128,7 +128,6 @@ def select_from_table(table_name, __column_names, __conditions):
             value[i] = []
             for select_i in select_column_index:
                 value[i].append(r_tmp[select_i])
-        print(value)
         values.append(value)
     # 所有values取并集
     rt = values[0]
@@ -136,7 +135,11 @@ def select_from_table(table_name, __column_names, __conditions):
         for v in vs:
             if v not in rt:
                 rt.append(v)
-    print_select_records(table_name, __column_names, rt)
+
+    if return_value:
+        return rt
+    else:
+        print_select_records(table_name, __column_names, rt)
 
 
 def delete_from_table(table_name, conditions):
