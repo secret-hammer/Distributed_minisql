@@ -35,6 +35,8 @@ class RegionServer(object):
         self.zookeeper_manager = ZookeeperManager(
             ip=zookeeper_cfg['IP'],
             port=zookeeper_cfg['Port'],
+            master_server_cfg=master_server_cfg,
+            client_server_cfg=client_server_cfg,
             name=name
         )
 

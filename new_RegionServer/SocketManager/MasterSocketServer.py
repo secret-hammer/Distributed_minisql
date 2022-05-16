@@ -21,12 +21,13 @@ class MasterSocketHandler(BaseRequestHandler):
     def handle(self):
         try:
             while True:
-                data = self.request.recv(4096)
+                data = self.request.recv(4096).decode()
                 datalist = re.findall("\[([^[]*)\]", data)
                 assert datalist.pop(0) == 'master'
 
                 ret_message = self.execute(datalist)
-                self.request.send(ret_message)
+                print(ret_message)
+                self.request.send(ret_message.encode())
 
         except Exception as e:
             print(e)
@@ -49,7 +50,7 @@ class MasterSocketHandler(BaseRequestHandler):
         # 询问是否可以执行恢复/新增策略
         if command_number == 0:
             ret_message = ret_message + f'[{logger.last_log_sequence_number}]'
-        if command_number == 1:
+        elif command_number == 1:
             log_records = req[0].split(';')
             for record in log_records:
                 split_ind = record.find(' ')
@@ -61,7 +62,7 @@ class MasterSocketHandler(BaseRequestHandler):
                 logger.add_log(sql_record)
                 sql.excute(sql_record)
             ret_message = ret_message + f'[{logger.last_log_sequence_number}]'
-        if command_number == 2:
+        elif command_number == 2:
             print("The Region Server is synchronous with cluster!")
         else:
             print("Unknown message")
