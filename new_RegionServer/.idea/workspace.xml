@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="11e43662-2fc5-482f-9771-b3c17b32f3ff" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/Logger.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RegionServer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SocketManager/ClientSocketServer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SocketManager/MasterSocketServer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZookeeperManager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/control.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dbfiles/catalog_files/index_catalog.msql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dbfiles/catalog_files/tables_catalog.msql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dbfiles/index_files/other_index.msql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dbfiles/index_files/record_index.msql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/engine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logfile/sql.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/APIManager/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/CatalogManager/catalog.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/IndexManager/index.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/RecordManager/record.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/dbfiles/catalog_files/index_catalog.msql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/dbfiles/catalog_files/tables_catalog.msql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/dbfiles/index_files/other_index.msql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/dbfiles/index_files/record_index.msql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/dbfiles/record_files/student.msql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/interpreter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/minisql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/utiles/dbinfo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/utiles/error.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/utiles/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minisql/utiles/type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="29E1zlCOpvyJeboLWFycfznPYaC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "last_opened_file_path": "/Users/apple/PycharmProjects/RegionServer/new_RegionServer"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="11e43662-2fc5-482f-9771-b3c17b32f3ff" name="变更" comment="" />
+      <created>1652663696335</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652663696335</updated>
+      <workItem from="1652663699021" duration="397000" />
+      <workItem from="1652664113644" duration="6105000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
